@@ -37,6 +37,12 @@ app.use('/api/products', productRoutes)
 app.use('/api/orders', orderRoutes)
 app.use('/api/admin', adminRoutes)
 
+// Redirect root-level paths to /api equivalents (for convenience)
+app.get('/products', (req, res) => res.redirect('/api/products'))
+app.get('/users', (req, res) => res.redirect('/api/users'))
+app.get('/orders', (req, res) => res.redirect('/api/orders'))
+app.get('/admin', (req, res) => res.redirect('/api/admin'))
+
 // Health check
 app.get('/api/health', (req, res) => {
     res.json({ status: 'ok', message: 'UVSTORE API is running' })
