@@ -4,6 +4,9 @@ dist-ssr
 *.local
 .env
 
+# Frontend (not tracked in this repo)
+frontend/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
